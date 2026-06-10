@@ -33,7 +33,9 @@
     .hero h1 { font-size: 44px; max-width: 720px; margin: 0 auto 20px; }
     .hero p { font-size: 18px; max-width: 560px; margin: 0 auto 36px; }
     .hero .cta-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .hero .badge {
+    .hero     .platforms { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 24px; font-size: 14px; color: #6B7280; }
+    .plat-icon { flex-shrink: 0; }
+    .badge {
       display: inline-block;
       background: #EEF2FF;
       color: #4F46E5;
@@ -179,6 +181,20 @@
 <section class="hero container">
   <div class="badge">Chrome Extension</div>
   <h1>Write messages that get replies.</h1>
+  <div class="platforms">
+    <span>Works inside</span>
+    <svg class="plat-icon" viewBox="0 0 128 128" width="28" height="28">
+      <rect x="4" y="20" width="120" height="88" rx="12" fill="#fff" stroke="#c5221f" stroke-width="3"/>
+      <path d="M64 58L14 30v66a8 8 0 008 8h84a8 8 0 008-8V30z" fill="#4285f4"/>
+      <path d="M14 30l50 28 50-28" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M34 52l-8 6m68-6l8 6" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+    <svg class="plat-icon" viewBox="0 0 128 128" width="28" height="28">
+      <rect x="4" y="4" width="120" height="120" rx="16" fill="#0a66c2"/>
+      <path d="M32 48h14v44H32zm7-22a9 9 0 110 18 9 9 0 010-18z" fill="#fff"/>
+      <path d="M56 48h13v8h1c2-4 7-8 15-8 16 0 19 9 19 22v26H90V73c0-6-1-13-8-13s-10 5-10 13v19H56z" fill="#fff"/>
+    </svg>
+  </div>
   <p>Tell SalesScribe who you are writing to and what you are offering. It writes the first draft in seconds. Already typed something rough? It polishes that too. No templates. No tab switching.</p>
   <div class="cta-group">
     <a href="https://chrome.google.com/webstore/detail/salesscribe-ai/bjbajiifkghleghfpdmjmefpfbcjfmlh" class="btn btn-primary" target="_blank">Add to Chrome - Free</a>

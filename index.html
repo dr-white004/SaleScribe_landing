@@ -3,9 +3,157 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SalesScribe AI - Write Sales Messages That Close Deals</title>
-  <meta name="description" content="SalesScribe AI writes polished sales messages for LinkedIn and Gmail. Choose your goal, tone, and length. Get a draft in seconds.">
-  <link rel="stylesheet" href="style.css">
+  <title>SalesScribe — AI Writing for Sales, Inside Gmail &amp; LinkedIn</title>
+  <meta name="description" content="SalesScribe lives in Gmail and LinkedIn. Rough draft? It polishes it. Blank box? It writes the first draft. Two modes, one tool, under 10 seconds.">
+  <link rel="icon" type="image/png" href="/icon/icon128.png">
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      color: #111827;
+      background: #fff;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3 { line-height: 1.15; font-weight: 700; letter-spacing: -0.025em; }
+    p { color: #6B7280; }
+    a { color: #4F46E5; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── Nav ── */
+    nav { padding: 24px 0; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-weight: 700; font-size: 18px; color: #111827; letter-spacing: -0.02em; }
+    .logo span { color: #4F46E5; }
+
+    /* ── Hero ── */
+    .hero { padding: 80px 0 64px; text-align: center; }
+    .hero h1 { font-size: 44px; max-width: 720px; margin: 0 auto 20px; }
+    .hero p { font-size: 18px; max-width: 560px; margin: 0 auto 36px; }
+    .hero .cta-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .hero .badge {
+      display: inline-block;
+      background: #EEF2FF;
+      color: #4F46E5;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .btn-primary { background: #4F46E5; color: #fff; }
+    .btn-primary:hover { background: #4338CA; text-decoration: none; }
+    .btn-secondary {
+      background: transparent;
+      color: #4F46E5;
+      border: 1.5px solid #D1D5DB;
+    }
+    .btn-secondary:hover { border-color: #4F46E5; text-decoration: none; }
+
+    /* ── Sections ── */
+    .section { padding: 96px 0; }
+    .section-title { font-size: 32px; text-align: center; margin-bottom: 16px; }
+    .section-subtitle {
+      text-align: center;
+      font-size: 17px;
+      max-width: 520px;
+      margin: 0 auto 56px;
+    }
+    .section-divider { border: none; border-top: 1px solid #F3F4F6; }
+
+    /* ── How It Works ── */
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .step { text-align: center; }
+    .step-number {
+      width: 48px; height: 48px;
+      background: #EEF2FF;
+      color: #4F46E5;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 18px;
+      margin: 0 auto 20px;
+    }
+    .step h3 { font-size: 18px; margin-bottom: 8px; }
+    .step p { font-size: 14px; line-height: 1.7; }
+
+    /* ── Features ── */
+    .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px 48px; }
+    .feature h3 { font-size: 16px; margin-bottom: 8px; }
+    .feature p { font-size: 14px; line-height: 1.7; }
+
+    /* ── Pricing ── */
+    .pricing-card {
+      max-width: 400px;
+      margin: 0 auto;
+      border: 1.5px solid #E5E7EB;
+      border-radius: 16px;
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .pricing-card .price { font-size: 48px; font-weight: 700; color: #111827; }
+    .pricing-card .price span { font-size: 16px; font-weight: 400; color: #6B7280; }
+    .pricing-card .perks { list-style: none; margin: 32px 0; text-align: left; }
+    .pricing-card .perks li {
+      padding: 8px 0;
+      font-size: 14px;
+      color: #374151;
+    }
+    .pricing-card .perks li::before {
+      content: "";
+      display: inline-block;
+      width: 6px; height: 10px;
+      border: solid #4F46E5;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      margin-right: 12px;
+    }
+
+    /* ── FAQ ── */
+    .faq-list { max-width: 680px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid #F3F4F6; padding: 20px 0; }
+    .faq-question {
+      font-weight: 600; font-size: 15px;
+      cursor: pointer; display: flex;
+      justify-content: space-between; align-items: center;
+      color: #111827;
+    }
+    .faq-answer {
+      font-size: 14px; color: #6B7280;
+      margin-top: 12px; line-height: 1.7;
+      display: none;
+    }
+    .faq-item.open .faq-answer { display: block; }
+
+    /* ── Footer ── */
+    footer { padding: 48px 0; text-align: center; font-size: 13px; color: #9CA3AF; }
+    footer a { color: #6B7280; margin: 0 12px; }
+    footer a:hover { color: #111827; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 30px; }
+      .hero { padding: 48px 0 40px; }
+      .section { padding: 64px 0; }
+      .steps { grid-template-columns: 1fr; }
+      .features { grid-template-columns: 1fr; }
+      .pricing-card { padding: 32px 24px; }
+    }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -28,37 +176,35 @@
   <div class="logo">Sales<span>Scribe</span></div>
 </nav>
 
-<!-- ─── Hero ─── -->
 <section class="hero container">
   <div class="badge">Chrome Extension</div>
-  <h1>Write sales messages that sound like you.</h1>
-  <p>SalesScribe AI drafts polished outreach, follow-ups, and replies for LinkedIn and Gmail. Pick your goal, tone, and length. Get a message in seconds.</p>
+  <h1>Write messages that get replies.</h1>
+  <p>You write the rough draft. SalesScribe turns it into something you'd actually send — in your voice, at the right length, under 10 seconds. No templates. No tab switching. No staring at a blank box.</p>
   <div class="cta-group">
-    <a href="https://chrome.google.com/webstore/detail/salesscribe-ai/bjbajiifkghleghfpdmjmefpfbcjfmlh" class="btn btn-primary" target="_blank">Add to Chrome - Free</a>
+    <a href="https://chrome.google.com/webstore/detail/salesscribe-ai/bjbajiifkghleghfpdmjmefpfbcjfmlh" class="btn btn-primary" target="_blank">Add to Chrome — Free</a>
     <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
   </div>
 </section>
 
-<!-- ─── How It Works ─── -->
 <section id="how-it-works" class="section">
   <div class="container">
     <h2 class="section-title">How It Works</h2>
-    <p class="section-subtitle">Three clicks from blank page to send-ready message.</p>
+    <p class="section-subtitle">One button. It detects whether your compose box has text or not. Two different ways to write better, faster.</p>
     <div class="steps">
       <div class="step">
         <div class="step-number">1</div>
-        <h3>Click the Button</h3>
-        <p>The floating SalesScribe button appears on every LinkedIn and Gmail compose box. Click it to open the AI panel.</p>
+        <h3>Open a Compose Box</h3>
+        <p>SalesScribe detects Gmail and LinkedIn compose windows automatically. A floating button appears. Click it and the panel opens over your message — no new tabs, no copy-paste.</p>
       </div>
       <div class="step">
         <div class="step-number">2</div>
-        <h3>Choose Your Settings</h3>
-        <p>Select your goal - cold outreach, follow-up, reply, connection note, or shorten. Pick a tone and word count.</p>
+        <h3>Let It Read the Room</h3>
+        <p>Typed a rough draft? Rewrite mode polishes it — pick a tone and length, like Grammarly with real voice control. Box is empty? Generate mode asks who you're writing to and what you're offering. It picks the right mode automatically.</p>
       </div>
       <div class="step">
         <div class="step-number">3</div>
-        <h3>Generate &amp; Send</h3>
-        <p>AI writes your message instantly. Review, edit if needed, and insert it directly into the text box. Done.</p>
+        <h3>Insert and Send</h3>
+        <p>The polished message appears in the popup. Edit it, regenerate with one click, or insert it straight into the compose box. From click to send-ready: under 10 seconds.</p>
       </div>
     </div>
   </div>
@@ -66,35 +212,34 @@
 
 <hr class="section-divider container">
 
-<!-- ─── Features ─── -->
 <section class="section">
   <div class="container">
-    <h2 class="section-title">Built for sales people who hate writing.</h2>
-    <p class="section-subtitle">No templates. No copy-paste. No staring at a blank screen.</p>
+    <h2 class="section-title">Two modes. One tool. No tab switching.</h2>
+    <p class="section-subtitle">Salespeople spend 2+ hours a day writing. SalesScribe lives where you already work.</p>
     <div class="features">
       <div class="feature">
-        <h3>Multiple Goals, One Tool</h3>
-        <p>Cold outreach, follow-ups, replies, LinkedIn connection notes, shorten any text. Each goal uses a tailored prompt designed for that context.</p>
+        <h3>Polishes Your Drafts. Keeps Your Voice.</h3>
+        <p>Wrote something rough? SalesScribe makes it read better without making it sound like a robot. Pick Professional, Friendly, or Direct. Pick Short, Medium, or Long. No goal selectors, no extra fields. Just cleaner, send-ready text.</p>
       </div>
       <div class="feature">
-        <h3>Control the Tone</h3>
-        <p>Professional, friendly, confident, direct, or warm. The same message rephrased for the right impression.</p>
+        <h3>Blank Box? It Writes the First Draft.</h3>
+        <p>No staring at a cursor. Tell it who you're writing to and what you're offering. It builds a draft from scratch based on your goal — cold outreach, follow-up, reply, LinkedIn note, breakup, or shorten.</p>
       </div>
       <div class="feature">
-        <h3>Word Count Control</h3>
-        <p>Short for LinkedIn connection notes. Medium for email. Long for detailed proposals. The AI respects your limit.</p>
+        <h3>Every Goal Has Its Own Prompt</h3>
+        <p>Cold outreach, follow-up, reply, LinkedIn connection note, LinkedIn cold DM, breakup, and shorten. Each goal has a tailored prompt built for that specific context — not a one-size-fits-all template.</p>
       </div>
       <div class="feature">
-        <h3>Rewrite Existing Drafts</h3>
-        <p>Already wrote something? Paste it in and ask AI to improve it. Keep your intent, fix the delivery.</p>
+        <h3>Three Distinct Tones</h3>
+        <p>Professional, Friendly, Direct. Each is a separate voice with its own vocabulary and sentence structure. The same message reads fundamentally different in each mode.</p>
       </div>
       <div class="feature">
-        <h3>Works on Gmail &amp; LinkedIn</h3>
-        <p>The button appears inside your existing workflow. No new tabs. No switching contexts.</p>
+        <h3>Length That Fits the Channel</h3>
+        <p>LinkedIn DMs need short and punchy. Emails have room to breathe. Short, Medium, or Long — pick what fits the platform and the relationship.</p>
       </div>
       <div class="feature">
-        <h3>Free to Start</h3>
-        <p>5 free messages per day. Upgrade to Pro for unlimited use.</p>
+        <h3>Free to Start. $9 for Unlimited.</h3>
+        <p>5 messages a day free, no credit card. Upgrade to Pro for unlimited generation. If you hit the limit, you get a 3-day free trial of Pro before you decide.</p>
       </div>
     </div>
   </div>
@@ -102,11 +247,10 @@
 
 <hr class="section-divider container">
 
-<!-- ─── Pricing ─── -->
 <section class="section">
   <div class="container">
     <h2 class="section-title">Pricing</h2>
-    <p class="section-subtitle">Simple. One plan. No surprises.</p>
+    <p class="section-subtitle">One plan. No tiers. No hidden limits.</p>
     <div class="pricing-card">
       <div class="price">$9 <span>/ month</span></div>
       <ul class="perks">
@@ -114,16 +258,15 @@
         <li>All goals and tones</li>
         <li>LinkedIn and Gmail support</li>
         <li>Rewrite existing drafts</li>
-        <li>7-day free trial on sign-up</li>
+        <li>3-day free trial when you hit the limit</li>
       </ul>
-      <a href="https://chrome.google.com/webstore/detail/salesscribe-ai/bjbajiifkghleghfpdmjmefpfbcjfmlh" class="btn btn-primary" style="width:100%;" target="_blank">Install Free</a>
+      <a href="https://chrome.google.com/webstore/detail/salesscribe-ai/bjbajiifkghleghfpdmjmefpfbcjfmlh" class="btn btn-primary" style="width:100%;" target="_blank">Start Writing Better — Free</a>
     </div>
   </div>
 </section>
 
 <hr class="section-divider container">
 
-<!-- ─── FAQ ─── -->
 <section class="section">
   <div class="container">
     <h2 class="section-title">Frequently Asked Questions</h2>
@@ -148,18 +291,26 @@
 
       <div class="faq-item">
         <div class="faq-question" onclick="toggleFaq(this)">
-          What AI model powers it?
+          What's the difference between Rewrite and Generate?
           <span style="font-size:18px;">+</span>
         </div>
-        <div class="faq-answer">Claude 3.5 Haiku by Anthropic - fast, reliable, and optimized for short-form writing tasks.</div>
+        <div class="faq-answer">Rewrite polishes text you already wrote — improves grammar, clarity, and flow without changing your meaning. Generate builds a draft from scratch using your context. The extension picks the right mode based on whether your compose box has text.</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question" onclick="toggleFaq(this)">
-          How do I cancel my subscription?
+          What AI model powers it?
           <span style="font-size:18px;">+</span>
         </div>
-        <div class="faq-answer">You can cancel anytime from your account settings. Your access continues until the end of the billing period.</div>
+        <div class="faq-answer">Claude Haiku by Anthropic. Fast, reliable, and optimized for short-form writing. Output appears in 2-4 seconds.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          How do I cancel?
+          <span style="font-size:18px;">+</span>
+        </div>
+        <div class="faq-answer">Cancel anytime from your account settings. Access continues until the end of the billing period.</div>
       </div>
 
       <div class="faq-item">
@@ -167,7 +318,7 @@
           Is my data private?
           <span style="font-size:18px;">+</span>
         </div>
-        <div class="faq-answer">Yes. Messages you generate are stored only for your history. We do not train AI models on your data. See our privacy policy for full details.</div>
+        <div class="faq-answer">Yes. Generated messages are stored only for your history. We do not train AI models on your data.</div>
       </div>
 
       <div class="faq-item">
@@ -182,7 +333,6 @@
   </div>
 </section>
 
-<!-- ─── Footer ─── -->
 <footer>
   <div class="container">
     <div>

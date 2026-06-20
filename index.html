@@ -263,12 +263,39 @@
 
 <hr class="section-divider container">
 
+<section class="section" style="padding:64px 0;">
+  <div class="container">
+    <p style="text-align:center;color:#9CA3AF;font-size:14px;margin-bottom:32px;text-transform:uppercase;letter-spacing:0.05em;">Built on trusted infrastructure</p>
+    <div style="display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap;">
+      <div style="text-align:center;">
+        <div style="font-weight:700;font-size:15px;color:#111827;">Supabase</div>
+        <p style="font-size:12px;color:#9CA3AF;margin-top:4px;">Encrypted database &bull; RLS policies &bull; Edge Functions</p>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-weight:700;font-size:15px;color:#111827;">Anthropic Claude</div>
+        <p style="font-size:12px;color:#9CA3AF;margin-top:4px;">AI generation &bull; No training on your data</p>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-weight:700;font-size:15px;color:#111827;">Paystack</div>
+        <p style="font-size:12px;color:#9CA3AF;margin-top:4px;">PCI-compliant payments &bull; Stripe company</p>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-weight:700;font-size:15px;color:#111827;">256-bit</div>
+        <p style="font-size:12px;color:#9CA3AF;margin-top:4px;">Encryption in transit &amp; at rest</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider container">
+
 <section class="section">
   <div class="container">
     <h2 class="section-title">Pricing</h2>
     <p class="section-subtitle">One plan. No tiers. No hidden limits.</p>
     <div class="pricing-card">
       <div class="price">$9 <span>/ month</span></div>
+      <p style="font-size:13px;color:#9CA3AF;margin-top:8px;">Always $9 — charged in NGN at checkout. Your bank converts to your currency automatically. No extra fees.</p>
       <ul class="perks">
         <li>Unlimited message generation</li>
         <li>All goals and tones</li>
@@ -318,7 +345,7 @@
           What AI model powers it?
           <span style="font-size:18px;">+</span>
         </div>
-        <div class="faq-answer">Claude Haiku by Anthropic. Output appears in 2-4 seconds.</div>
+        <div class="faq-answer">Claude Haiku by Anthropic. Output appears in 2-4 seconds. Your inputs are processed only to generate drafts — Anthropic does not train on your content.</div>
       </div>
 
       <div class="faq-item">
@@ -334,7 +361,15 @@
           Is my data private?
           <span style="font-size:18px;">+</span>
         </div>
-        <div class="faq-answer">We store generated messages for your history only. We do not train AI models on your data.</div>
+        <div class="faq-answer">Yes. Your data is encrypted in transit and at rest via Supabase (our infrastructure provider). We store generated messages for your history only. We do not sell your data. We do not train AI models on your data. Messages are only processed by Claude (Anthropic) to generate your drafts — they do not use your content for training. You can delete your messages or entire account anytime.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          How does billing work?
+          <span style="font-size:18px;">+</span>
+        </div>
+        <div class="faq-answer">The price is $9/month regardless of where you are. At checkout you'll see the NGN amount (e.g. â¦12,200) because our payment processor is Nigerian. Don't worry — if you're outside Nigeria, your bank converts $9 to your currency at their rate. You're never charged more than $9 equivalent. Nigerian customers simply pay in NGN directly. No hidden fees either way.</div>
       </div>
 
       <div class="faq-item">

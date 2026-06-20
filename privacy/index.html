@@ -46,7 +46,7 @@
   <ul>
     <li><strong>Supabase</strong> - Authentication, database, and edge function hosting</li>
     <li><strong>Anthropic (Claude)</strong> - AI message generation (your inputs are processed but not stored by Anthropic for training)</li>
-    <li><strong>Paddle</strong> - Payment processing (we do not see or store your payment details)</li>
+    <li><strong>Paystack</strong> - Payment processing (we do not see or store your payment details)</li>
     <li><strong>Google Chrome Storage</strong> - Local storage of your session token</li>
   </ul>
 
@@ -54,7 +54,16 @@
   <p>We retain your account information and generated messages for as long as your account is active. You may delete your messages at any time. Account deletion requests can be sent to muizabdul73@gmail.com and will be processed within 30 days.</p>
 
   <h2>Data Security</h2>
-  <p>We use industry-standard security measures including encrypted connections (HTTPS), secure authentication via Supabase, and minimal data collection. However, no online service is completely secure. We cannot guarantee absolute security.</p>
+  <p>We take data protection seriously. Security measures include:</p>
+  <ul>
+    <li><strong>Encryption in transit:</strong> All data sent between the extension and our servers uses HTTPS/TLS.</li>
+    <li><strong>Encryption at rest:</strong> Data stored in Supabase (PostgreSQL) is encrypted at rest.</li>
+    <li><strong>Supabase Row Level Security:</strong> Users can only access their own data. Database queries are scoped per user via RLS policies enforced at the database level.</li>
+    <li><strong>Edge Functions:</strong> Server-side logic runs in Deno via Supabase Edge Functions — database credentials are never exposed to the browser.</li>
+    <li><strong>Minimal data collection:</strong> We only collect what is necessary to provide the service. Payment card details never touch our servers — they go directly to Paystack.</li>
+    <li><strong>No AI training on your data:</strong> Anthropic (Claude) processes your inputs only to generate drafts. They do not retain or train on your content.</li>
+  </ul>
+  <p>No online service is completely secure. We cannot guarantee absolute security, but we follow industry best practices for a product of our size.</p>
 
   <h2>Your Rights</h2>
   <p>Depending on your jurisdiction, you may have the right to: access your data, correct inaccurate data, delete your data, restrict processing, or export your data. To exercise these rights, contact us at muizabdul73@gmail.com.</p>
